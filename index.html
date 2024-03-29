@@ -17,13 +17,15 @@
             <img src="static/logo.png" alt="logo-alura">
         </div>
         <div class="form-container">
-            <div>
-                <textarea placeholder="Ingrese el texto aquí"></textarea>
-                <p><span class="icon--info"></span>Solo letras minúsculas y sin acentos</p>
-                <div>
-                    <button type="button">Encriptar</button>
-                    <button type="button">Desencriptar</button>
-                </div>
+            <textarea placeholder="Ingrese el texto aquí" class="form-textarea"></textarea>
+            <div class="form-info">
+                <img src="static/exclamation.svg" alt="exclamation-icon" class="icon--info">
+                <p class="text--info"> Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="buttons-container">
+                <button type="button" class="form-btn form-encrypt-btn">Encriptar</button>
+                <button type="button" class="form-btn form-decrypt-btn">Desencriptar</button>
             </div>
         </div>
         <div class="result-container">
