@@ -1,0 +1,59 @@
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3871;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #6c757d;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+}
+
+body {
+  background-color: var(--light-blue-100);
+  margin: 0;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  padding: 2em;
+  height: calc(100% - 50px - 4em);
+}
+
+.menu-container {
+  width: 8%;
+  min-height: 400px;
+}
+
+.form-container {
+  display: flex;
+  width: 50%;
+  min-height: 400px;
+}
+
+.result-container {
+  width: 30%;
+  display: flex;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: #495057;
+  color: #ffffff;
+}
