@@ -17,26 +17,26 @@
             <img src="static/logo.png" alt="logo-alura">
         </div>
         <div class="form-container">
-            <textarea placeholder="Ingrese el texto aquí" class="form-textarea"></textarea>
+            <textarea id="user-text" placeholder="Ingrese el texto aquí" class="form-textarea"></textarea>
             <div class="form-info">
                 <img src="static/exclamation.svg" alt="exclamation-icon" class="icon--info">
                 <p class="text--info"> Solo letras minúsculas y sin acentos</p>
             </div>
 
             <div class="buttons-container">
-                <button type="button" class="form-btn form-encrypt-btn">Encriptar</button>
+                <button type="button" class="form-btn form-encrypt-btn" onclick="toEncrypt()">Encriptar</button>
                 <button type="button" class="form-btn form-decrypt-btn">Desencriptar</button>
             </div>
         </div>
         <div class="result-container">
-            <div class="no-content-view">
+            <div id="no-content-section" class="no-content-view">
                 <img src="static/no-content-image.png" alt="no content advice" class="no-content-image">
                 <p class="no-content-title">Ningún mensaje fue encontrado</p>
                 <p class="no-content-subtitle">Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
-            <div class="result-view">
-                <p></p>
-                <button type="button">Copiar</button>
+            <div id="result-section" class="result-view">
+                <p id="result-text"></p>
+                <button class="result-copy-btn" type="button">Copiar</button>
             </div>
         </div>
     </div>

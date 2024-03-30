@@ -88,7 +88,8 @@ body {
   width: 100%;
 }
 
-.form-btn {
+.form-btn,
+.result-copy-btn {
   border: 1px solid var(--dark-blue-300);
   width: 50%;
   padding: 1.5em 2em;
@@ -100,12 +101,14 @@ body {
   color: #ffffff;
 }
 
-.form-decrypt-btn {
+.form-decrypt-btn,
+.result-copy-btn {
   background-color: #d8dfe8;
   color: var(--dark-blue-300);
 }
 
-.form-btn:hover {
+.form-btn:hover,
+.result-copy-btn:hover {
   cursor: pointer;
   outline: none;
 }
@@ -147,6 +150,13 @@ body {
 
 .result-view {
   display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-copy-btn {
+  width: 100% !important;
 }
 
 .footer-container {
