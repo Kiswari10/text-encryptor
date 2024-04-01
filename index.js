@@ -9,9 +9,11 @@ const data = {
   o: "ober",
   u: "ufat",
 };
+let result = "";
 
 const toEncrypt = () => {
-  let result = "";
+  result = "";
+  resultText.innerText = "";
   for (letter of text.value) {
     if (data[letter]) {
       result += data[letter];
@@ -24,3 +26,12 @@ const toEncrypt = () => {
   resultText.innerText = result;
   text.value = "";
 };
+
+async function copyResult() {
+  try {
+    await navigator.clipboard.writeText(result);
+    console.log("Contenido copiado al portapapeles");
+  } catch (err) {
+    console.error("Error al copiar: ", err);
+  }
+}
