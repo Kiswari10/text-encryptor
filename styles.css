@@ -65,6 +65,7 @@ body {
 
 .form-textarea::placeholder {
   color: var(--dark-blue-300);
+  font-family: "Inter", sans-serif;
 }
 
 .form-info {
@@ -101,8 +102,7 @@ body {
   color: #ffffff;
 }
 
-.form-decrypt-btn,
-.result-copy-btn {
+.form-decrypt-btn {
   background-color: #d8dfe8;
   color: var(--dark-blue-300);
 }
@@ -120,7 +120,7 @@ body {
   background-color: #ffffff;
   border-radius: 2em;
   height: 100%;
-  min-height: calc(400px);
+  min-height: 400px;
   padding: 1em 2em;
 }
 
@@ -155,7 +155,14 @@ body {
   justify-content: space-between;
 }
 
+.result-text {
+  font-size: 1.5em;
+  color: var(--gray-400);
+}
+
 .result-copy-btn {
+  background-color: #ffffff;
+  color: var(--dark-blue-300);
   width: 100% !important;
 }
 
@@ -168,4 +175,53 @@ body {
   background: var(--gray-400);
   color: #ffffff;
   font-size: 14px;
+}
+
+/* Desktop */
+@media (min-width: 1281px) {
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    gap: 2%;
+    padding: 2em;
+    height: calc(100% - 40px - 4em);
+  }
+
+  .menu-container,
+  .form-container,
+  .result-container {
+    width: 100%;
+  }
+
+  .menu-container {
+    min-height: 50px;
+  }
+
+  .menu-container > img {
+    margin-left: -50px;
+  }
+
+  .form-container {
+    padding: 0px;
+  }
+  .result-container {
+    justify-content: center;
+    width: 100%;
+    min-height: max-content;
+    padding: 1em 2em;
+    height: max-content;
+  }
+  .no-content-image {
+    display: none;
+  }
+  .no-content-title {
+    margin-bottom: 0px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 575px) {
 }
