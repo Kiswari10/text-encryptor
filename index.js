@@ -14,12 +14,23 @@ let result = "";
 const toEncrypt = () => {
   result = "";
   resultText.innerText = "";
-  for (letter of text.value) {
+  for (const letter of text.value) {
     if (data[letter]) {
       result += data[letter];
     } else {
       result += letter;
     }
+  }
+  noContentSection.style.display = "none";
+  resultSection.style.display = "flex";
+  resultText.innerText = result;
+  text.value = "";
+};
+
+const toDecrypt = () => {
+  result = text.value;
+  for (const [key, value] of Object.entries(data)) {
+    result = result.replaceAll(value, key);
   }
   noContentSection.style.display = "none";
   resultSection.style.display = "flex";
