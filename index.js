@@ -2,6 +2,10 @@ const text = document.getElementById("user-text");
 const noContentSection = document.getElementById("no-content-section");
 const resultSection = document.getElementById("result-section");
 const resultText = document.getElementById("result-text");
+const encryptBtn = document.getElementById("encrypt-btn");
+const decryptBtn = document.getElementById("decrypt-btn");
+const copyBtn = document.getElementById("copy-btn");
+
 const data = {
   a: "ai",
   e: "enter",
@@ -11,20 +15,19 @@ const data = {
 };
 let result = "";
 
-const toEncrypt = () => {
-  result = "";
-  resultText.innerText = "";
-  for (const letter of text.value) {
-    if (data[letter]) {
-      result += data[letter];
-    } else {
-      result += letter;
-    }
-  }
+const execAfterOperation = () => {
   noContentSection.style.display = "none";
   resultSection.style.display = "flex";
   resultText.innerText = result;
   text.value = "";
+};
+
+const toEncrypt = () => {
+  result = "";
+  for (const letter of text.value) {
+    result += data[letter] ? data[letter] : letter;
+  }
+  execAfterOperation();
 };
 
 const toDecrypt = () => {
@@ -32,10 +35,7 @@ const toDecrypt = () => {
   for (const [key, value] of Object.entries(data)) {
     result = result.replaceAll(value, key);
   }
-  noContentSection.style.display = "none";
-  resultSection.style.display = "flex";
-  resultText.innerText = result;
-  text.value = "";
+  execAfterOperation();
 };
 
 async function copyResult() {
@@ -46,3 +46,17 @@ async function copyResult() {
     console.error("Error al copiar: ", err);
   }
 }
+
+//****************Event handlers*****************//
+// Encrypt
+encryptBtn.addEventListener("click", () => {
+  toEncrypt();
+});
+// Decrypt
+decryptBtn.addEventListener("click", () => {
+  toDecrypt();
+});
+// Copy
+copyBtn.addEventListener("click", () => {
+  copyResult();
+});
