@@ -28,6 +28,7 @@ const toEncrypt = () => {
     result += data[letter] ? data[letter] : letter;
   }
   execAfterOperation();
+  showModal("ENCRYPTED!", "You can proceed to copy the encrypted text!");
 };
 
 const toDecrypt = () => {
@@ -36,16 +37,26 @@ const toDecrypt = () => {
     result = result.replaceAll(value, key);
   }
   execAfterOperation();
+  showModal("DECRYPTED!", "You can proceed to copy the decrypted text!");
 };
 
 async function copyResult() {
   try {
     await navigator.clipboard.writeText(result);
-    console.log("Contenido copiado al portapapeles");
+    showModal("COPIED!", "Content copied to clipboard!");
   } catch (err) {
     console.error("Error al copiar: ", err);
   }
 }
+
+const showModal = (title, text) => {
+  Swal.fire({
+    title,
+    text,
+    icon: "success",
+    confirmButtonText: "Yeah!",
+  });
+};
 
 //****************Event handlers*****************//
 // Encrypt
